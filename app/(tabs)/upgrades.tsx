@@ -11,10 +11,6 @@ type Tab = 'units' | 'global' | 'synergies';
 
 export default function UpgradesScreen() {
   const [activeTab, setActiveTab] = useState<Tab>('units');
-  const purchasedUpgrades = useGameStore((s) => s.upgrades);
-  const buyUpgrade = useGameStore((s) => s.buyUpgrade);
-  const canAfford = useGameStore((s) => s.canAfford);
-  const units = useGameStore((s) => s.units);
 
   const unitUpgrades = UPGRADES.filter((u) => u.effect.type === 'unit_multiplier');
   const globalUpgrades = UPGRADES.filter((u) => u.effect.type === 'global_multiplier');
